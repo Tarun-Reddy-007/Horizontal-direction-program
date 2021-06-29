@@ -1,3 +1,4 @@
+print("*(Asterisk) shows your current position")
 list=["*"]
 accept=1
 while accept==1:
