@@ -1,0 +1,38 @@
+list=["*"]
+accept=1
+while accept==1:
+    start=int(input("Enter 1 if you want to move or 0 if you want to stop: "))
+    if start!=1:
+        accept=0
+        print("Thank You")
+    else:
+        stop=1
+        while stop==1:
+            move=int(input("Enter 6 to move right, 4 to move left, 0 to stop: "))
+            if move==0:
+                stop=0
+            if move==6:
+                if list[0]=="*":
+                    list.append("_")
+                    position_1=list.index("*")
+                    list[position_1+1]="*"
+                    list[position_1]="_"
+                elif list[len(list)-1]=="*":
+                    list.append("_")
+                    position_3=list.index("*")
+                    list[position_3+1]="*"
+                    list[position_3]="_"
+                else:
+                    position_3=list.index("*")
+                    list[position_3+1]="*"
+                    list[position_3]="_"
+            elif move==4:
+                if list[0]=="*":
+                    list.append("_")
+                else:
+                    position_2=list.index("*")
+                    list[position_2-1]="*"
+                    list[position_2]="_"
+print("")
+for i in list:
+    print(i,end="")
